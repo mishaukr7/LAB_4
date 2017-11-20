@@ -3,7 +3,6 @@ import math
 
 def f(x):
     return ((x[0] + 10*x[1])**2) + 5*(x[2] - x[3])**2 +(x[1] - 2*x[2])**4 + 10*(x[0] - x[3])**4
-    #return 9*x[0]**2 + 4*x[0]*x[1] + 5*x[1]**2
 
 def exp_search(x_start, h, f):
 
@@ -17,15 +16,8 @@ def exp_search(x_start, h, f):
             x_start = [x for x in x_plus]
         else:
             x_start = [i for i in x_minus]
-        '''
-        elif f(x_start) > f(x_minus):
-            x_start = [x for x in x_minus]
-        else:
-            x_start = [x for x in x_start]
-        '''
     return  x_start
 
-#print(exp_search([3, -1, 0, 1], 1, f))
 
 def precision(x):
     sum_of_squares = sum(i**2 for i in x)
@@ -68,10 +60,4 @@ def image_search(x_start, h, coef_alpha, eps, f):
             else:
                 alpha *= coef_alpha
 
-#print(image_search([-4, -4, -4, -4], [1, 1, 1, 1], 5, 0.01, f))
-
-#print(image_search([-20, -22], [1, 1], 0.001, f))
-
-
-#print(exp_search([1, 1, 0, 1], [0.25, 0.25, 0.25, 0.], f))
 
